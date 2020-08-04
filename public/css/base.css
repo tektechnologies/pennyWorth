@@ -1,0 +1,33 @@
+body {
+font-family:  Helvetica, Arial,sans-serif;
+    background-color: #CFD2CD;
+
+}
+
+h1 {
+    font-size: 35px;
+    color: #FBFBF2;
+    float:left;
+    margin: 75px;
+}
+body {
+    clear: both;
+}
+main {
+    width: 1200px;
+    background-color: #A6A2A2;
+    margin: 0 auto;
+    
+}
+header {
+    background-color: #847577;
+    height: 200px;
+    clear: both;
+}
+nav {float: right;}
+
+nav li {
+    clear: both;
+    display: inline;
+    padding:10px;
+}
