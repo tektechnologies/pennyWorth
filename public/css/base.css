@@ -1,5 +1,5 @@
 body {
-font-family:  Helvetica, Arial,sans-serif;
+    font-family:  Helvetica, Arial,sans-serif;
     background-color: #CFD2CD;
 
 }
@@ -10,14 +10,11 @@ h1 {
     float:left;
     margin: 75px;
 }
-body {
-    clear: both;
-}
+
 main {
     width: 1200px;
     background-color: #A6A2A2;
-    margin: 0 auto;
-    
+    margin: 0 auto;   
 }
 header {
     background-color: #847577;
@@ -30,4 +27,6 @@ nav li {
     clear: both;
     display: inline;
     padding:10px;
+    font-size: 20px;
+    
 }
