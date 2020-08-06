@@ -1,0 +1,11 @@
+.flex-container {
+    display: flex;
+    background-color: #FBFBF2;;
+  }
+  
+  .flex-container > section {
+    background-color:#abb3a3;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
