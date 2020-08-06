@@ -2,28 +2,27 @@
  <html> 
     <head>
         <meta charset="utf-8">
-     
-        <title></title>
+        <title>pennyWorth</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/styles.css">
+        <%- include('./layouts/styles') %>
     </head>
     <body>
+
       <main>
-        <header>
-        <h1>Welcome to pennyWorth Home Base, <%= user.username %> </h1>
 
-        <nav>
-          <ul>
-            <li><a href="/index">Home Portal</a></li>
-            <li><a href="/taskList">Task List</a></li>
+        <%- include('layouts/marquee') %>
 
-          </ul>
-        </nav>
-      </header>
+        <h1>Welcome to pennyWorth Home Portal, <%= user.username %> </h1>
+        <%- include('layouts/nav') %>
+    
+
+
     
       </main>
-        
-        <script src="" ></script>
+
+      <%- include('./layouts/footer') %>
+
+      <script src="js/app.js" ></script>
     </body>
 </html>
