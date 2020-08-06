@@ -49,7 +49,7 @@ app.get('/getTasks', getTasks);
 
 // app.post('/add', addTask);
 
-app.get( '*', (request, response) => response.status(404).send('This request route does not exsist. Bye for now.'));
+app.get( '*', (request, response) => response.status(404).send('This request route was not found, you have reached a 404. Bye for now.'));
 
 console.log('Trying to connect to Postgres');
 client.connect()
