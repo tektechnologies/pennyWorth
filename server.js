@@ -32,11 +32,19 @@ client.on('error', err => console.error(err));
 //Set up View Engines so you can render your view files
 app.set('view engine', 'ejs');
 
-app.get('/index', (request, response) => {
+app.get('/', (request, response) => {
   let viewModel = {
     user,
   }
-  response.render('index', viewModel);
+  response.render('', viewModel);
+});
+
+
+app.get('/homePortal', (request, response) => {
+  let viewModel = {
+    user,
+  }
+  response.render('pages/homePortal', viewModel);
 });
 
 //Add route for Task List Page
