@@ -3,19 +3,26 @@
     <head>
         <meta charset="utf-8">
      
-        <title></title>
+        <title>Task Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/styles.css">
+        <%- include('../layouts/styles') %>
     </head>
     <body>
       <main>
         <h1>Task List for  <%= user.username %> </h1>
+        <%- include('../layouts/nav') %>
 
-      
+        <% tasks.forEach(task => { %>
+          <section>
+            <h4><%= task.title %></h4>
+            <p><%= task.description %></p>
+            <p><a href="/tasks/<%= task.id %>">Details</a></p>
+          </section>
+        <% }) %>
     
       </main>
-        
+      <%- include('../layouts/footer') %>
         <script src="" ></script>
     </body>
 </html>
