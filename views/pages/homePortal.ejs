@@ -5,23 +5,23 @@
         <title>pennyWorth</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <%- include('./layouts/styles') %>
+        <%- include('../layouts/styles') %>
     </head>
     <body>
 
       <main>
 
-        <%- include('layouts/marquee') %>
+        <%- include('../layouts/marquee') %>
 
-        <h1>Welcome to pennyWorth Access Page Login now.</h1>
-        <%- include('layouts/loginNav') %>
+        <h1>Welcome to pennyWorth Home Portal, <%= user.username %> </h1>
+        <%- include('../layouts/nav') %>
     
 
 
     
       </main>
 
-      <%- include('./layouts/footer') %>
+      <%- include('../layouts/footer') %>
 
       <script src="js/app.js" ></script>
     </body>
