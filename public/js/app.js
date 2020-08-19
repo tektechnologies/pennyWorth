@@ -19,10 +19,18 @@ setInterval(function(){
   var dayOfWeek = weekday[today.getDay()];
   console.log(dayOfWeek);
   var date = (today.getMonth()+1) + '-' + today.getDay() + '-' + today.getFullYear();
-  var time =  ('0' + today.getHours()).slice(-2) + ':' + ('0' + today.getMinutes()).slice(-2) + ':' + ('0' + today.getSeconds()).slice(-2);
+  var time =  ('0' + today.getHours()).slice(-2) + ':'
+             + ('0' + today.getMinutes()).slice(-2) + ':' 
+             + ('0' + today.getSeconds()).slice(-2);
   var dateTime = dayOfWeek + ' ' + date + ' | ' + ' Current Time: ' + time;
 
 
   document.getElementById('dayAndTime').innerHTML = dateTime;
 
 }, 1000);
+
+
+
+
+
+console.log('this is where we will figure out how to give users access to the new social network for tech savy, go getter, hustlers');

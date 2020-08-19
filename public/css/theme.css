@@ -1,23 +1,49 @@
 /* unvisited link */
-a:link {
+nav li a:link {
     color: #FBFBF2;
     text-decoration: none;
   }
   
   /* visited link */
-  a:visited {
+  nav li a:visited {
     color: #E5E6E4;
     text-decoration: none;
   }
   
   /* mouse over link */
-  a:hover {
+  nav li a:hover {
     color: #CFD2CD;
     text-decoration: none;
   }
   
   /* selected link */
-  a:active {
+  nav li a:active {
     color: #A6A2A2;
     text-decoration: none;
   }
+
+
+  /* unvisited link */
+a:link {
+  /* color: #FBFBF2; */
+  color: #03256C;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #1768AC;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #CFD2CD;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #1768AC;
+  text-decoration: none;
+}
