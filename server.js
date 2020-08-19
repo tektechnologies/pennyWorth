@@ -51,7 +51,7 @@ app.get('/homePortal', (request, response) => {
 // API Routes
 app.get('/getTasks', getTasks);
 
-// app.get('/tasks/:task_id', getOneTask);
+app.get('/tasks/:task_id', getOneTask);
 
 // app.get('/add', showForm);
 
@@ -83,22 +83,23 @@ function getTasks(request, response) {
     })
 }
 
-// function getOneTask(request, response) {
-//   const SQL = `
-//     SELECT *
-//     FROM tasks
-//     WHERE id = $1
-//   `;
-//   let values = [request.params.task_id];
-//   client.query(SQL, values)
-//     .then(result => {
-//       let viewModel = {
-//         task: result.rows[0],
-//       };
-//       response.render('pages/detail', viewModel);
-//     })
-//     .catch(err => handleError(err, response));
-// }
+function getOneTask(request, response) {
+  const SQL = `
+    SELECT *
+    FROM tasks
+    WHERE id = $1
+  `;
+  let values = [request.params.task_id];
+  console.log('This is the values ', values);
+  client.query(SQL, values)
+    .then(result => {
+      let viewModel = {
+        task: result.rows[0],
+      };
+      response.render('pages/detail', viewModel);
+    })
+    .catch(err => handleError(err, response));
+}
 
 // function showForm(request, response) {
 //   response.render('pages/add-task')
@@ -125,12 +126,12 @@ function getTasks(request, response) {
 //     });
 // }
 
-// function handleError(error, response) {
-//   let viewModel = {
-//     error: error.message
-//   };
-//   response.status(500).render('pages/error', viewModel);
-// }
+function handleError(error, response) {
+  let viewModel = {
+    error: error.message
+  };
+  response.status(500).render('pages/error', viewModel);
+}
 
 
 

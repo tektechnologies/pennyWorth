@@ -8,3 +8,5 @@ CREATE TABLE tasks (
   category VARCHAR(255),
   due DATE NOT NULL DEFAULT NOW()
 );
+
+
