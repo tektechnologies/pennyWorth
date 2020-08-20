@@ -10,11 +10,21 @@ h1 {
     font-size: 35px;
     color: #FBFBF2;
     float:left;
+
+}
+h2{ 
+    font-size: 30px;
+    color: whitesmoke;
+}
+h4 {
+    font-family: 'Archivo Black', sans-serif;
 }
 
 main {
     /* background-color: #A6A2A2;  */
-    background-color: #2541B2; 
+    background-color: #FBFBF2;
+    clear: both;
+    
 
 }
 header {
@@ -40,6 +50,7 @@ marquee {
     background-color:#03256C;
     color: whitesmoke;
     font-size: 25px;
+    
 }
 
 #dayAndTime {

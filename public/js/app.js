@@ -7,7 +7,10 @@ setInterval(function(){
 //   document.getElementById("ID_of_the_time_element").innerHTML= getTime();
 
   var today = new Date();
+  // console.log('the variable today ',today);
   var weekday = new Array(7);
+  // console.log('the variable weekday ',weekday);
+
   weekday[0] = 'Sunday';
   weekday[1] = 'Monday';
   weekday[2] = 'Tuesday';
@@ -17,8 +20,10 @@ setInterval(function(){
   weekday[6] = 'Saturday';
 
   var dayOfWeek = weekday[today.getDay()];
-  console.log(dayOfWeek);
-  var date = (today.getMonth()+1) + '-' + today.getDay() + '-' + today.getFullYear();
+  // console.log('dayOfWeek ',dayOfWeek);
+
+  var date = (today.getMonth()+1) + '-' + today.getDate() + '-' + today.getFullYear();
+  // console.log('the variable date ', date);
   var time =  ('0' + today.getHours()).slice(-2) + ':'
              + ('0' + today.getMinutes()).slice(-2) + ':' 
              + ('0' + today.getSeconds()).slice(-2);

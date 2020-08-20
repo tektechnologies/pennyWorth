@@ -9,12 +9,14 @@
         <%- include('../layouts/styles') %>
     </head>
     <body>
-      <main>
-       
-        <%- include('../layouts/marquee') %>
+     
+      <%- include('../layouts/marquee') %>
 
         <h1>Task List for  <%= user.username %> </h1>
         <%- include('../layouts/nav') %>
+      <main>
+       
+        
 
         <% tasks.forEach(task => { %>
           <section class="flex-container">
@@ -28,6 +30,8 @@
     
       </main>
       <%- include('../layouts/footer') %>
+
+    
         <script src="js/app.js" ></script>
     </body>
 </html>

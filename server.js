@@ -40,15 +40,12 @@ app.get('/', (request, response) => {
 });
 
 
-app.get('/homePortal', (request, response) => {
-  let viewModel = {
-    user,
-  }
-  response.render('pages/homePortal', viewModel);
-});
+
 
 //Add route for Task List Page
 // API Routes
+app.get('/homePortal', getHomePortal);
+
 app.get('/getTasks', getTasks);
 
 app.get('/tasks/:task_id', getOneTask);
@@ -94,6 +91,7 @@ function getOneTask(request, response) {
   client.query(SQL, values)
     .then(result => {
       let viewModel = {
+        user,
         task: result.rows[0],
       };
       response.render('pages/detail', viewModel);
@@ -125,6 +123,51 @@ function getOneTask(request, response) {
 //       handleError(err, response);
 //     });
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getHomePortal(request, response) {
+  const SQL = `
+    SELECT *
+    FROM portals
+  `;
+  client.query(SQL)
+    .then(results => {
+      let viewModel = {
+        user,
+        portals: results.rows,
+      };
+      response.render('pages/homePortal', viewModel);
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function handleError(error, response) {
   let viewModel = {
