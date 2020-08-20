@@ -12,3 +12,23 @@
     font-size: 30px;
     border-radius: 25px;
   }
+
+
+  /* task Detail Page  */
+  .flex-containerDetail {
+    display: flex;
+    background-color: #FBFBF2;
+    color: whitesmoke;
+    padding: 50px;
+  }
+  
+  .flex-containerDetail > section {
+    background-color: #1768AC;
+    border: 5px solid  #06BEE1; 
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 25px;
+    margin: 0 auto;
+  }
+
+ /* ------------------------- */

@@ -16,7 +16,15 @@
         <h1>Welcome to pennyWorth Home Portal, <%= user.username %> </h1>
         <%- include('../layouts/nav') %>
     
-
+        <% portals.forEach(portal => { %>
+          <section class="flex-container">
+            <section>
+            <h4><%= portal.title %></h4>
+            <p><%= portal.description %></p>
+            <p><a href="/portals/<%= portal.id %>">RUN</a></p>
+          </section>
+          </section>
+        <% }) %>
 
     
       </main>

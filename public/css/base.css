@@ -11,10 +11,16 @@ h1 {
     color: #FBFBF2;
     float:left;
 }
+h2{ 
+    font-size: 30px;
+    color: whitesmoke;
+}
+
 
 main {
     /* background-color: #A6A2A2;  */
     background-color: #2541B2; 
+    
 
 }
 header {

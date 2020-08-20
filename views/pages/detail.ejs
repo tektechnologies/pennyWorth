@@ -14,11 +14,12 @@
       <main>
         <%- include('../layouts/marquee') %>
         <%- include('../layouts/nav') %>
-        <section class="flex-container">
+        <h2>Task Detail Page</h2>
+        <section class="flex-containerDetail">
           <section>
-          <h4></h4>
-          <p></p>
-          <p><a href="">Details</a></p>
+            <h2><%= task.title %></h2>
+            <p><%= task.description %></p>
+            <p>Contact: <%= task.contact %></p>
         </section>
         </section>
       
