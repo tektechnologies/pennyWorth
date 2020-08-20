@@ -8,25 +8,26 @@
         <%- include('../layouts/styles') %>
     </head>
     <body>
-
+      <%- include('../layouts/marquee') %>
+      <h1>Welcome to pennyWorth Home Portal, <%= user.username %> </h1>
+      <%- include('../layouts/nav') %>
       <main>
 
-        <%- include('../layouts/marquee') %>
-
-        <h1>Welcome to pennyWorth Home Portal, <%= user.username %> </h1>
-        <%- include('../layouts/nav') %>
+       
     
+     <section class="mainSection">
+
         <% portals.forEach(portal => { %>
-          <section class="flex-container">
+          <section class="flex-containerPortal">
             <section>
             <h4><%= portal.title %></h4>
             <p><%= portal.description %></p>
-            <p><a href="/portals/<%= portal.id %>">RUN</a></p>
+            <a href="/portals/<%= portal.id %>">RUN</a>
           </section>
           </section>
         <% }) %>
 
-    
+      </section>
       </main>
 
       <%- include('../layouts/footer') %>

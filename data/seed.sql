@@ -22,4 +22,4 @@ INSERT INTO portals (title, contact, status, category, description)
 VALUES('LASC','Craig','Active','Life Management Tool','Never loose track of your personal information again. Ever. When needed, you can easily share information to outside sources or remove access to any of your data.');
 
 INSERT INTO portals (title, contact, status, category, description) 
-VALUES('sayWhat','Craig','Active','Message board, just text, no images, no video, no ads either though, so...');
+VALUES('sayWhat', 'Craig', 'Active', 'Media Social Type', 'Message board, just text, no images, no video, no ads either though, so...');

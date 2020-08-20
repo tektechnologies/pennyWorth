@@ -1,6 +1,6 @@
 .flex-container {
     display: flex;
-    background-color: #FBFBF2;;
+    background-color: #FBFBF2;
   }
   
   .flex-container > section {
@@ -32,3 +32,37 @@
   }
 
  /* ------------------------- */
+ 
+ 
+
+
+   /* portal Detail Page  */
+   .flex-containerPortal {
+    display: flex;
+  }
+ 
+  .flex-containerPortal h4{
+    text-align: center;
+  }
+  .flex-containerPortal a {
+    float: right; 
+  }
+  .flex-containerPortal > section {
+    /* background-color:#abb3a3; */
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 25px;
+    width: 33%;
+   
+  }
+  
+
+ /* ------------------------- */
+
+
+ .container {
+   margin-top: 15px;
+ }

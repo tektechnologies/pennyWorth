@@ -91,6 +91,7 @@ function getOneTask(request, response) {
   client.query(SQL, values)
     .then(result => {
       let viewModel = {
+        user,
         task: result.rows[0],
       };
       response.render('pages/detail', viewModel);

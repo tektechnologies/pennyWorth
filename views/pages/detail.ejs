@@ -11,10 +11,12 @@
         <%- include('../layouts/styles') %>
     </head>
     <body>
+      <%- include('../layouts/marquee') %>
+      <h1>Task Specifics for  <%= user.username %> </h1>
+      <%- include('../layouts/nav') %>
+      <h2>Task Detail Page</h2>
       <main>
-        <%- include('../layouts/marquee') %>
-        <%- include('../layouts/nav') %>
-        <h2>Task Detail Page</h2>
+      
         <section class="flex-containerDetail">
           <section>
             <h2><%= task.title %></h2>
