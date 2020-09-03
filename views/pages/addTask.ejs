@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html> 
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Add Task</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%- include('../layouts/styles') %>
+    </head>
+    <body>
+        <%- include('../layouts/marquee') %>
+        <h1>Add a New Task:  <%= user.username %> </h1>
+        <%- include('../layouts/nav') %>
+        <main>
+            <section class="flex-containerDetail">
+                <section>
+                 <form>
+                     <fieldset>
+                         <legend>Add A Task</legend>
+                        
+                         <label>Title</label>
+                         <input type="text" name="title">
+                         
+                         <label>Description</label>
+                         <textarea name="description"  cols="30" rows="10"></textarea>
+                        
+                         <label>Category</label>
+                         <input type="text" name="category" > 
+                         <label>Contact</label>
+                         <input type="text" name="Contact" > 
+                         <label>Status</label>
+                         <input type="text" name="status" value="New">
+                        
+                        
+                        </fieldset>
+                        <button type="submit">Add This Task</button>
+                 </form>
+              </section>
+              </section>
+              
+              
+              
+              category VARCHAR(255),
+              due DATE NOT NULL DEFAULT NOW()
+
+        </main>
+        <%- include('../layouts/footer') %>
+        <script src="/js/app.js"></script>
+    </body>
+</html>
