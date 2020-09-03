@@ -62,7 +62,7 @@ app.get('/', (request, response) => {
 // API Routes
 app.get('/homePortal', getHomePortal);
 
-app.get('/getTasks', getTasks);
+app.get('/getTasksHomePage', getTasksHomePage);
 
 app.get('/tasks/:task_id', getOneTask);
 
@@ -81,7 +81,7 @@ client.connect()
 
 // HELPER FUNCTIONS
 
-function getTasks(request, response) {
+function getTasksHomePage(request, response) {
   const SQL = `
     SELECT *
     FROM tasks
@@ -92,7 +92,7 @@ function getTasks(request, response) {
         user,
         tasks: results.rows,
       };
-      response.render('pages/taskList', viewModel);
+      response.render('pages/taskListHomePage', viewModel);
     })
 }
 
