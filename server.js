@@ -171,13 +171,13 @@ function getHomePortal(request, response) {
         user,
         portals: results.rows,
       };
+      console.log(results.rows);
       response.render('pages/homePortal', viewModel);
     })
 }
 
 
-
-
+getHomePortal();
 
 
 

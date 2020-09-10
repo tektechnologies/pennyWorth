@@ -17,7 +17,7 @@ CREATE TABLE portals (
   contact VARCHAR(255),
   status VARCHAR(255),
   category VARCHAR(255),
-  routePath VARCHAR(255),
+  routePath VARCHAR(255)
 );
 
 

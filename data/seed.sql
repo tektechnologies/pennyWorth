@@ -13,7 +13,7 @@ VALUES('House Exterior','Craig','In wip','Home Repairs','Do before painting');
 
 
 INSERT INTO portals (title, contact, status, category, description, routePath) 
-VALUES('ToDo List','Craig','Active','Life Management Tool','Keep track of tasks or idea or whatever, just write it down and dont forget it.', 'getTasksHomePage');
+VALUES('ToDo List','Craig','Active','Life Management Tool','Keep track of tasks or idea or whatever, just write it down and dont forget it.', '/getTasksHomePage');
 
 INSERT INTO portals (title, contact, status, category, description, routePath) 
 VALUES('worldWeatherOne','Craig','Active','Environmental Management','Earth tracking information for weather, storms, weird happenings, Air Quality, for all mother Earth has to show us.', 'getWeatherHomePage');
