@@ -16,7 +16,6 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 
-
 //Middle Wear
 app.use(sassMiddleware({
   /* Options */
@@ -25,9 +24,6 @@ app.use(sassMiddleware({
   debug: true,
   outputStyle: 'compressed'
 }));
-
-
-
 
 
 //app.use(methodOverride('_method'));
@@ -68,11 +64,12 @@ app.get('/tasks/:task_id', getOneTask);
 
 app.get('/addTask', showForm);
 
-// app.post('/add', addTask);
+app.post('/addNewTask', addTask);
 
 app.get( '*', (request, response) => response.status(404).send('This request route was not found, you have reached a 404. Bye for now.'));
 
 console.log('Trying to connect to Postgres');
+
 client.connect()
   .then(() => {
     app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
@@ -122,26 +119,26 @@ function showForm(request, response) {
   response.render('pages/addTask', viewModel);
 }
 
-// function addTask(request, response) {
-//   console.log(request.body);
-//   // Destructuring
-//   let { title, description, category, contact, status } = request.body;
+function addTask(request, response) {
+  console.log(request.body);
+  // Destructuring
+  let { title, contact, status, category, description } = request.body;
 
-//   const SQL = `
-//     INSERT INTO tasks (title, description, category, contact, status)
-//     VALUES ($1,$2,$3,$4,$5)
-//   `;
-//   const values = [title, description, category, contact, status];
+  const SQL = `
+    INSERT INTO tasks (title, contact, status, category, description)
+    VALUES ($1,$2,$3,$4,$5)
+  `;
+  const values = [title, contact, status, category, description];
 
-//   client.query(SQL, values)
-//     .then(() => {
-//       // POST - Redirect - GET pattern
-//       response.redirect('/');
-//     })
-//     .catch(err => {
-//       handleError(err, response);
-//     });
-// }
+  client.query(SQL, values)
+    .then(() => {
+      // POST - Redirect - GET pattern
+      response.redirect('/');
+    })
+    .catch(err => {
+      handleError(err, response);
+    });
+}
 
 
 

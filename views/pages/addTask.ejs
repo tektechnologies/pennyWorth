@@ -12,25 +12,30 @@
         <%- include('../layouts/marquee') %>
         <h1>Add a New Task:  <%= user.username %> </h1>
         <%- include('../layouts/nav') %>
+          
+ <ul class="crudTaskNav"> |
+    <li><a href="/getTasksHomePage">Task List</a></li> |
+  </ul>
         <main>
             <section class="flex-containerDetail">
                 <section>
-                 <form>
+                 <form id="addTaskForm" action="/addNewTask" method="post">
                      <fieldset>
                          <legend>Add A Task</legend>
                         
                          <label>Title</label>
-                         <input type="text" name="title">
+                         <input type="text" name="title" required >
                          
-                         <label>Description</label>
-                         <textarea name="description"  cols="30" rows="10"></textarea>
-                        
                          <label>Category</label>
-                         <input type="text" name="category" > 
+                         <input type="text" name="category" required > 
                          <label>Contact</label>
-                         <input type="text" name="Contact" > 
+                         <input type="text" name="Contact" required > 
                          <label>Status</label>
-                         <input type="text" name="status" value="New">
+                         <input type="text" name="status" value="New" required >
+
+                         <label>Description</label>
+                         <textarea type="text" name="description"  cols="50" rows="10" required ></textarea>
+                        
                         
                         
                         </fieldset>
@@ -41,8 +46,7 @@
               
               
               
-              category VARCHAR(255),
-              due DATE NOT NULL DEFAULT NOW()
+             
 
         </main>
         <%- include('../layouts/footer') %>
