@@ -7,16 +7,28 @@ const user = {username: 'My Lord', greeting: 'Good Day Sire'};
 //Application Dependancies.
 const pg = require('pg');
 
-
-
+const sassMiddleware = require('node-sass-middleware');
+const path = require('path');
+const srcPath = __dirname + '/sass';
+const destPath = __dirname + '/public/css';
 //Environmental Variables
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
+
 //Middle Wear
+app.use(sassMiddleware({
+  /* Options */
+  src: srcPath,
+  dest: path.join(destPath),
+  debug: true,
+  outputStyle: 'compressed'
+}));
+
+
 //app.use(methodOverride('_method'));
 // Utilize ExpressJS functionality to parse the body of the request
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 // Specify a directory for static resources Wire up Static files from the public
 app.use(express.static('./public'));
 
@@ -46,17 +58,18 @@ app.get('/', (request, response) => {
 // API Routes
 app.get('/homePortal', getHomePortal);
 
-app.get('/getTasks', getTasks);
+app.get('/getTasksHomePage', getTasksHomePage);
 
 app.get('/tasks/:task_id', getOneTask);
 
-// app.get('/add', showForm);
+app.get('/addTask', showForm);
 
-// app.post('/add', addTask);
+app.post('/addNewTask', addTask);
 
 app.get( '*', (request, response) => response.status(404).send('This request route was not found, you have reached a 404. Bye for now.'));
 
 console.log('Trying to connect to Postgres');
+
 client.connect()
   .then(() => {
     app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
@@ -65,7 +78,7 @@ client.connect()
 
 // HELPER FUNCTIONS
 
-function getTasks(request, response) {
+function getTasksHomePage(request, response) {
   const SQL = `
     SELECT *
     FROM tasks
@@ -76,7 +89,7 @@ function getTasks(request, response) {
         user,
         tasks: results.rows,
       };
-      response.render('pages/taskList', viewModel);
+      response.render('pages/taskListHomePage', viewModel);
     })
 }
 
@@ -94,35 +107,38 @@ function getOneTask(request, response) {
         user,
         task: result.rows[0],
       };
-      response.render('pages/detail', viewModel);
+      response.render('pages/taskDetail', viewModel);
     })
     .catch(err => handleError(err, response));
 }
 
-// function showForm(request, response) {
-//   response.render('pages/add-task')
-// }
+function showForm(request, response) {
+  let viewModel = {
+    user
+  };
+  response.render('pages/addTask', viewModel);
+}
 
-// function addTask(request, response) {
-//   console.log(request.body);
-//   // Destructuring
-//   let { title, description, category, contact, status } = request.body;
+function addTask(request, response) {
+  console.log('request body for add task ', request.body);
+  // Destructuring
+  let { title, contact, status, category, description } = request.body;
 
-//   const SQL = `
-//     INSERT INTO tasks (title, description, category, contact, status)
-//     VALUES ($1,$2,$3,$4,$5)
-//   `;
-//   const values = [title, description, category, contact, status];
+  const SQL = `
+    INSERT INTO tasks (title, contact, status, category, description)
+    VALUES ($1,$2,$3,$4,$5)
+  `;
+  const values = [title, contact, status, category, description];
 
-//   client.query(SQL, values)
-//     .then(() => {
-//       // POST - Redirect - GET pattern
-//       response.redirect('/');
-//     })
-//     .catch(err => {
-//       handleError(err, response);
-//     });
-// }
+  client.query(SQL, values)
+    .then(() => {
+      // POST - Redirect - GET pattern
+      response.redirect('/');
+    })
+    .catch(err => {
+      handleError(err, response);
+    });
+}
 
 
 
@@ -152,18 +168,10 @@ function getHomePortal(request, response) {
         user,
         portals: results.rows,
       };
+      console.log(results.rows);
       response.render('pages/homePortal', viewModel);
     })
 }
-
-
-
-
-
-
-
-
-
 
 
 
