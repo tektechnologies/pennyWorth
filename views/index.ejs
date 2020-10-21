@@ -6,34 +6,36 @@
   <title>TheMountain</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%- include('layouts/styles') %>
 </head>
+<header>
+  <%- include('layouts/marquee') %>
+  <h1>Welcome to The Mountain</h1>
+  <%- include('layouts/loginNav') %>
+</header>
+ 
+  <section class="flex-container">
+    <section>
+      <ul>
+        <li><a href="">Start Exploring...</a></li>
+      </ul>
+    </section>
+    <section>
+      <select>
+        <option value="default">Filter by Keyword</option>
+      </select>
+    </section>
+  </section>
+
 
 <body>
-  <%- include('layouts/marquee') %>
 
-  <h1>Welcome to The Mountain</h1>
 
-  <%- include('layouts/loginNav') %>
   <main>
 
 
-    <section class="flex-container">
-        <section>
-          <ul>
-            <li><a href="">Start Exploring...</a></li>
-          </ul>
-        </section>
-        
-        <section>
-          <select>
-            <option value="default">Filter by Keyword</option>
-          </select>
-        </section>
-
-
-          
-    </section>
+    
     <template id="photo-template">
       <h2></h2>
       <img src="" alt="">

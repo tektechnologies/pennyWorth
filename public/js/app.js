@@ -51,7 +51,7 @@ function Image(item) {
 Image.all = [];
 
 Image.prototype.render = function () {
-  let $templateClone = $('<section></section>');
+  let $templateClone = $('<div></div>');
   $templateClone.html($('#photo-template').html());
   $templateClone.find('h2').text(this.title);
   $templateClone.find('img').attr('src', this.image_url);
@@ -109,17 +109,17 @@ Image.handleFilter = () => {
   $('select').on('change', function () {
     let $selected = $(this).val();
     if ($selected !== 'default') {
-      $('section').hide();
+      $('div').hide();
 
       Image.all.forEach(image => {
         if ($selected === image.keyword) {
-          $(`section[class="${$selected}"]`).addClass('filtered').fadeIn();
+          $(`div[class="${$selected}"]`).addClass('filtered').fadeIn();
         }
       });
 
       $(`option[value=${$selected}]`).fadeIn();
     } else {
-      $('section').removeClass('filtered').fadeIn();
+      $('div').removeClass('filtered').fadeIn();
       $(`option[value=${$selected}]`).fadeIn();
     }
   });
