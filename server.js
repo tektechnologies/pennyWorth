@@ -28,7 +28,7 @@ app.use(sassMiddleware({
 
 //app.use(methodOverride('_method'));
 // Utilize ExpressJS functionality to parse the body of the request
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 // Specify a directory for static resources Wire up Static files from the public
 app.use(express.static('./public'));
 
@@ -120,7 +120,7 @@ function showForm(request, response) {
 }
 
 function addTask(request, response) {
-  console.log(request.body);
+  console.log('request body for add task ', request.body);
   // Destructuring
   let { title, contact, status, category, description } = request.body;
 
@@ -172,14 +172,6 @@ function getHomePortal(request, response) {
       response.render('pages/homePortal', viewModel);
     })
 }
-
-
-getHomePortal();
-
-
-
-
-
 
 
 
