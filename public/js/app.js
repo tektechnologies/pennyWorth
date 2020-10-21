@@ -107,20 +107,20 @@ Image.populateFilter = () => {
 //helper function to handle the image switching
 Image.handleFilter = () => {
   $('select').on('change', function () {
-    let $selected = $(this).val();
-    if ($selected !== 'default') {
+    let userSelected = $(this).val();
+    if (userSelected !== 'default') {
       $('div').hide();
 
       Image.all.forEach(image => {
-        if ($selected === image.keyword) {
-          $(`div[class="${$selected}"]`).addClass('filtered').fadeIn();
+        if (userSelected === image.keyword) {
+          $(`div[class="${userSelected}"]`).addClass('filtered').fadeIn();
         }
       });
 
-      $(`option[value=${$selected}]`).fadeIn();
+      $(`option[value=${userSelected}]`).fadeIn();
     } else {
       $('div').removeClass('filtered').fadeIn();
-      $(`option[value=${$selected}]`).fadeIn();
+      $(`option[value=${userSelected}]`).fadeIn();
     }
   });
 };
