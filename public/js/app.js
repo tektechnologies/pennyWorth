@@ -40,19 +40,18 @@ setInterval(function(){
 
 
 
-//Test code class 2 here...
 function Image(item) {
   this.image_url = item.image_url;
   this.title = item.title;
   this.description = item.description;
   this.keyword = item.keyword;
-  this.horns = item.horns;
+  this.level = item.level;
 }
 
 Image.all = [];
 
 Image.prototype.render = function () {
-  let $templateClone = $('<div></div>');
+  let $templateClone = $('<section></section>');
   $templateClone.html($('#photo-template').html());
   $templateClone.find('h2').text(this.title);
   $templateClone.find('img').attr('src', this.image_url);
@@ -82,8 +81,12 @@ Image.readJson = () => {
     .then(Image.handleFilter);
 };
 
+
+
+//helper function that stores keywords for options.
 Image.populateFilter = () => {
   let filterKeywords = [];
+  console.log('filterkeywords', filterKeywords);
 
   $('option').not(':first').remove();
 
@@ -99,21 +102,24 @@ Image.populateFilter = () => {
   });
 };
 
+
+
+//helper function to handle the image switching
 Image.handleFilter = () => {
   $('select').on('change', function () {
     let $selected = $(this).val();
     if ($selected !== 'default') {
-      $('div').hide();
+      $('section').hide();
 
       Image.all.forEach(image => {
         if ($selected === image.keyword) {
-          $(`div[class="${$selected}"]`).addClass('filtered').fadeIn();
+          $(`section[class="${$selected}"]`).addClass('filtered').fadeIn();
         }
       });
 
       $(`option[value=${$selected}]`).fadeIn();
     } else {
-      $('div').removeClass('filtered').fadeIn();
+      $('section').removeClass('filtered').fadeIn();
       $(`option[value=${$selected}]`).fadeIn();
     }
   });

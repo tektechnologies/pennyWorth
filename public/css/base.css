@@ -16,6 +16,10 @@ h2{
     font-size: 30px;
     color: whitesmoke;
 }
+main h2{
+    font-size: 30px;
+    color: #1768AC;
+}
 h4 {
     font-family: 'Archivo Black', sans-serif;
 }
