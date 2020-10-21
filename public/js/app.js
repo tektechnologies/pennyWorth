@@ -67,7 +67,7 @@ Image.readJson = () => {
     dataType: 'json'
   };
 
-  $.ajax('../../data/page-1.json', ajaxSettings)
+  $.ajax('../dashboard-iconsJSON/page-1.json', ajaxSettings)
     .then(data => {
       data.forEach(item => {
         Image.all.push(new Image(item));
