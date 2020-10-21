@@ -7,23 +7,14 @@ const user = {username: 'My Lord', greeting: 'Good Day Sire'};
 //Application Dependancies.
 const pg = require('pg');
 
-const sassMiddleware = require('node-sass-middleware');
-const path = require('path');
-const srcPath = __dirname + '/sass';
-const destPath = __dirname + '/public/css';
+
 //Environmental Variables
 require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 
 //Middle Wear
-app.use(sassMiddleware({
-  /* Options */
-  src: srcPath,
-  dest: path.join(destPath),
-  debug: true,
-  outputStyle: 'compressed'
-}));
+
 
 
 //app.use(methodOverride('_method'));
