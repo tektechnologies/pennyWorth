@@ -4,7 +4,6 @@
   }
   
   .flex-container > section {
-    /* background-color:#abb3a3; */
     background-color: #FFF;
     border: 5px solid #1768AC;
     margin: 10px;
@@ -12,7 +11,7 @@
     font-size: 30px;
     border-radius: 25px;
   }
-
+  
 
   /* task Detail Page  */
   .flex-containerDetail {
@@ -31,13 +30,11 @@
     margin: 0 auto;
   }
 
- /* ------------------------- */
- 
- 
+
 
 
    /* portal Detail Page  */
-   .flex-containerPortal {
+    .flex-containerPortal {
     display: flex;
   }
  
@@ -48,7 +45,6 @@
     float: right; 
   }
   .flex-containerPortal > section {
-    /* background-color:#abb3a3; */
     background-color: #FFF;
     border: 5px solid #1768AC;
     margin: 10px;
@@ -58,7 +54,34 @@
     width: 33%;
    
   }
-  
+   
+
+
+  .flex-containerDetail > div {
+    background-color: #1768AC;
+    border: 5px solid  #06BEE1; 
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 25px;
+    margin: 0 auto;
+  }
+  .flex-container > div {
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 25px;
+  }
+  .flex-containerPortal > div {
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 25px;
+    width: 33%;
+  }
 
  /* ------------------------- */
 
