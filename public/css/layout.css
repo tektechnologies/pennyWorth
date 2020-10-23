@@ -57,23 +57,28 @@
    
 
 
-  .flex-containerDetail > div {
+
+
+  .flex-container > div {
+    display: inline-block;
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  /* .flex-containerDetail > div {
     background-color: #1768AC;
     border: 5px solid  #06BEE1; 
     padding: 20px;
     font-size: 30px;
     border-radius: 25px;
     margin: 0 auto;
-  }
-  .flex-container > div {
-    background-color: #FFF;
-    border: 5px solid #1768AC;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-    border-radius: 25px;
-  }
-  .flex-containerPortal > div {
+  } */
+ 
+  /* .flex-containerPortal > div {
     background-color: #FFF;
     border: 5px solid #1768AC;
     margin: 10px;
@@ -81,7 +86,7 @@
     font-size: 30px;
     border-radius: 25px;
     width: 33%;
-  }
+  } */
 
  /* ------------------------- */
 
