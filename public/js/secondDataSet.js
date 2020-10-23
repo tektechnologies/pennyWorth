@@ -79,16 +79,20 @@ $(document).ready(function(){
     });
   };
 
-  //   Image.handleSort = () => {
-  //     $('input').on('change', function () {
-  //       $('select').val('default');
-  //       $('div').remove();
-  //       Image.sortBy(Image.all, $(this).attr('id'));
-  //       Image.all.forEach(image => {
-  //         $('#image-container').append(image.render());
-  //       });
-  //     });
-  //   };
+  Image.handleSort = () => {
+    $('input').on('change', function () {
+      $('select').val('default');
+      $('div').remove();
+      Image.sortBy(Image.all, $(this).attr('id'));
+
+      console.log('image array handle sort',Image.all);
+      console.log('this is da facker', $(this).attr('id'));
+      
+      Image.all.forEach(image => {
+        $('#image-container').append(image.render());
+      });
+    });
+  };
 
   //   Image.handleImageEvents = () => {
   //     $('main').on('click', 'div', function (event) {
@@ -120,7 +124,7 @@ $(document).ready(function(){
     Image.handleFilter();
     // Image.handleImageEvents();
     // Image.handleNavEvents();
-    // Image.handleSort();
+    Image.handleSort();
   });
 
 
