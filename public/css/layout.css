@@ -12,6 +12,10 @@
     border-radius: 25px;
   }
   
+  .flex-container > section form {
+    background-color: #FFF;
+    font-size: 16px;
+  }
 
   /* task Detail Page  */
   .flex-containerDetail {
