@@ -54,7 +54,29 @@
     </template>
 
   </main>
+  <section  id="image-container">
     
+      <!-- Mustache template for photos -->
+      <template id="photo-template" type="text/x-tmpl-mustache">
+        <div class="{{ keyword }}">
+          <h2>{{ title }}</h2>
+          <img src="{{ image_url }}" alt="" />
+          <p>{{ description }}</p>
+        </div>
+      </template>
+    
+  </section>  
+
+
+
+
+
+
+
+
+
+
+
   <%- include('layouts/footer') %>
  <section class="flex-container">
  <section>
