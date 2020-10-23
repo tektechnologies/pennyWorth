@@ -84,45 +84,43 @@ $(document).ready(function(){
       $('select').val('default');
       $('div').remove();
       Image.sortBy(Image.all, $(this).attr('id'));
-
       console.log('image array handle sort',Image.all);
       console.log('this is da facker', $(this).attr('id'));
-      
       Image.all.forEach(image => {
         $('#image-container').append(image.render());
       });
     });
   };
 
-  //   Image.handleImageEvents = () => {
-  //     $('main').on('click', 'div', function (event) {
-  //       event.stopPropagation();
-  //       let $clone = $(this).clone();
-  //       let elements = $clone[0].children;
+  Image.handleImageEvents = () => {
+    $('main').on('click', 'div', function (event) {
+      event.stopPropagation();
+      let $clone = $(this).clone();
+      let elements = $clone[0].children;
 
-  //       $('section').addClass('active').html(elements);
+      $('section').addClass('active').html(elements);
 
-  //       $(window).scrollTop(0);
-  //     });
+      $(window).scrollTop(0);
+    });
 
-  //     $('body').on('click', function () {
-  //       const $section = $('section');
-  //       $section.empty();
-  //       $section.removeClass('active');
-  //     });
-  //   };
+    //     $('body').on('click', function () {
+    //       const $section = $('section');
+    //       $section.empty();
+    //       $section.removeClass('active');
+    //     });
+    //   };
 
   //   Image.handleNavEvents = () => {
   //     $('footer ul, header ul').on('click', 'li', function () {
   //       $('#image-container').empty();
   //       Image.readJson($(this).attr('id'));
   //     });
-  //   };
+  };
 
   $(() => {
     Image.readJson(1);
     Image.handleFilter();
-    // Image.handleImageEvents();
+    Image.handleImageEvents();
     // Image.handleNavEvents();
     Image.handleSort();
   });
