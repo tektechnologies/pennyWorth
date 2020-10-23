@@ -37,7 +37,7 @@ $(document).ready(function(){
         Image.all.forEach(image => {
           $('#image-container').append(image.render());
         });
-        // Image.populateFilter();
+        Image.populateFilter();
 
       });
   };
@@ -50,34 +50,34 @@ $(document).ready(function(){
     });
   };
 
-  //   Image.populateFilter = () => {
-  //     let filterKeywords = [];
+  Image.populateFilter = () => {
+    let filterKeywords = [];
 
-  //     $('option').not(':first').remove();
+    $('option').not(':first').remove();
 
-  //     Image.all.forEach(image => {
-  //       if (!filterKeywords.includes(image.keyword)) {
-  //         filterKeywords.push(image.keyword);
-  //       }
-  //     });
+    Image.all.forEach(image => {
+      if (!filterKeywords.includes(image.keyword)) {
+        filterKeywords.push(image.keyword);
+      }
+    });
 
-  //     filterKeywords.sort();
+    filterKeywords.sort();
 
-  //     filterKeywords.forEach(keyword => {
-  //       let optionTag = `<option value="${keyword}">${keyword}</option>`;
-  //       $('select').append(optionTag);
-  //     });
-  //   };
+    filterKeywords.forEach(keyword => {
+      let optionTag = `<option value="${keyword}">${keyword}</option>`;
+      $('select').append(optionTag);
+    });
+  };
 
-  //   Image.handleFilter = () => {
-  //     $('select').on('change', function () {
-  //       let selected = $(this).val();
-  //       if (selected !== 'default') {
-  //         $('div').hide();
-  //         $(`div.${selected}`).fadeIn();
-  //       }
-  //     });
-  //   };
+  Image.handleFilter = () => {
+    $('select').on('change', function () {
+      let selected = $(this).val();
+      if (selected !== 'default') {
+        $('div').hide();
+        $(`div.${selected}`).fadeIn();
+      }
+    });
+  };
 
   //   Image.handleSort = () => {
   //     $('input').on('change', function () {
@@ -117,7 +117,7 @@ $(document).ready(function(){
 
   $(() => {
     Image.readJson(1);
-    // Image.handleFilter();
+    Image.handleFilter();
     // Image.handleImageEvents();
     // Image.handleNavEvents();
     // Image.handleSort();
