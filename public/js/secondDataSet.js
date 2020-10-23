@@ -2,8 +2,6 @@
 console.log('This is the second Data Set.js. Connected.');
 $(document).ready(function(){
 
-
-
   function Image(item) {
     this.image_url = item.image_url;
     this.title = item.title;
@@ -11,7 +9,6 @@ $(document).ready(function(){
     this.keyword = item.keyword;
     this.level = item.level;
   }
-
   Image.prototype.render = function () {
     let template = $('#photo-template').html();
     let markup = Mustache.render(template, this);
@@ -20,8 +17,8 @@ $(document).ready(function(){
 
   Image.readJson = (page) => {
     Image.all = [];
-
-    $('main').empty();
+    console.log('array image all', Image.all);
+    //$('main').empty();
 
     const ajaxSettings = {
       method: 'get',
@@ -40,7 +37,7 @@ $(document).ready(function(){
         Image.all.forEach(image => {
           $('#image-container').append(image.render());
         });
-        Image.populateFilter();
+        // Image.populateFilter();
 
       });
   };
@@ -53,77 +50,77 @@ $(document).ready(function(){
     });
   };
 
-  Image.populateFilter = () => {
-    let filterKeywords = [];
+  //   Image.populateFilter = () => {
+  //     let filterKeywords = [];
 
-    $('option').not(':first').remove();
+  //     $('option').not(':first').remove();
 
-    Image.all.forEach(image => {
-      if (!filterKeywords.includes(image.keyword)) {
-        filterKeywords.push(image.keyword);
-      }
-    });
+  //     Image.all.forEach(image => {
+  //       if (!filterKeywords.includes(image.keyword)) {
+  //         filterKeywords.push(image.keyword);
+  //       }
+  //     });
 
-    filterKeywords.sort();
+  //     filterKeywords.sort();
 
-    filterKeywords.forEach(keyword => {
-      let optionTag = `<option value="${keyword}">${keyword}</option>`;
-      $('select').append(optionTag);
-    });
-  };
+  //     filterKeywords.forEach(keyword => {
+  //       let optionTag = `<option value="${keyword}">${keyword}</option>`;
+  //       $('select').append(optionTag);
+  //     });
+  //   };
 
-  Image.handleFilter = () => {
-    $('select').on('change', function () {
-      let selected = $(this).val();
-      if (selected !== 'default') {
-        $('div').hide();
-        $(`div.${selected}`).fadeIn();
-      }
-    });
-  };
+  //   Image.handleFilter = () => {
+  //     $('select').on('change', function () {
+  //       let selected = $(this).val();
+  //       if (selected !== 'default') {
+  //         $('div').hide();
+  //         $(`div.${selected}`).fadeIn();
+  //       }
+  //     });
+  //   };
 
-  Image.handleSort = () => {
-    $('input').on('change', function () {
-      $('select').val('default');
-      $('div').remove();
-      Image.sortBy(Image.all, $(this).attr('id'));
-      Image.all.forEach(image => {
-        $('#image-container').append(image.render());
-      });
-    });
-  };
+  //   Image.handleSort = () => {
+  //     $('input').on('change', function () {
+  //       $('select').val('default');
+  //       $('div').remove();
+  //       Image.sortBy(Image.all, $(this).attr('id'));
+  //       Image.all.forEach(image => {
+  //         $('#image-container').append(image.render());
+  //       });
+  //     });
+  //   };
 
-  Image.handleImageEvents = () => {
-    $('main').on('click', 'div', function (event) {
-      event.stopPropagation();
-      let $clone = $(this).clone();
-      let elements = $clone[0].children;
+  //   Image.handleImageEvents = () => {
+  //     $('main').on('click', 'div', function (event) {
+  //       event.stopPropagation();
+  //       let $clone = $(this).clone();
+  //       let elements = $clone[0].children;
 
-      $('section').addClass('active').html(elements);
+  //       $('section').addClass('active').html(elements);
 
-      $(window).scrollTop(0);
-    });
+  //       $(window).scrollTop(0);
+  //     });
 
-    $('body').on('click', function () {
-      const $section = $('section');
-      $section.empty();
-      $section.removeClass('active');
-    });
-  };
+  //     $('body').on('click', function () {
+  //       const $section = $('section');
+  //       $section.empty();
+  //       $section.removeClass('active');
+  //     });
+  //   };
 
-  Image.handleNavEvents = () => {
-    $('footer ul, header ul').on('click', 'li', function () {
-      $('#image-container').empty();
-      Image.readJson($(this).attr('id'));
-    });
-  };
+  //   Image.handleNavEvents = () => {
+  //     $('footer ul, header ul').on('click', 'li', function () {
+  //       $('#image-container').empty();
+  //       Image.readJson($(this).attr('id'));
+  //     });
+  //   };
 
   $(() => {
     Image.readJson(1);
-    Image.handleFilter();
-    Image.handleImageEvents();
-    Image.handleNavEvents();
-    Image.handleSort();
+    // Image.handleFilter();
+    // Image.handleImageEvents();
+    // Image.handleNavEvents();
+    // Image.handleSort();
   });
 
 
