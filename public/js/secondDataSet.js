@@ -18,7 +18,7 @@ $(document).ready(function(){
   Image.readJson = (page) => {
     Image.all = [];
     console.log('array image all', Image.all);
-    //$('main').empty();
+    // $('main').empty();
 
     const ajaxSettings = {
       method: 'get',
@@ -93,29 +93,28 @@ $(document).ready(function(){
   };
 
   Image.handleImageEvents = () => {
-    $('main').on('click', 'div', function (event) {
+    $('#image-container').on('click', 'div', function (event) {
       event.stopPropagation();
       let $clone = $(this).clone();
       let elements = $clone[0].children;
-
-      $('section').addClass('active').html(elements);
-
+      $('#modalPopUp').addClass('active').html(elements);
       $(window).scrollTop(0);
     });
 
-    //     $('body').on('click', function () {
-    //       const $section = $('section');
-    //       $section.empty();
-    //       $section.removeClass('active');
-    //     });
-    //   };
+    $('body').on('click', function () {
+      const $modalPopUp = $('#modalPopUp');
+      $modalPopUp.empty();
+      $modalPopUp.removeClass('active');
+    });
+  };
 
   //   Image.handleNavEvents = () => {
   //     $('footer ul, header ul').on('click', 'li', function () {
   //       $('#image-container').empty();
   //       Image.readJson($(this).attr('id'));
   //     });
-  };
+  // };
+
 
   $(() => {
     Image.readJson(1);
