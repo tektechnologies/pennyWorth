@@ -17,8 +17,7 @@ $(document).ready(function(){
 
   Image.readJson = (page) => {
     Image.all = [];
-    Image.oneJson = [];
-    Image.twoJson = [];
+   
    
     // $('main').empty();
 
@@ -26,34 +25,7 @@ $(document).ready(function(){
       method: 'get',
       dataType: 'json'
     };
-    $.ajax(`dashboard-iconsJSON/page-1.json`, ajaxSettings)
-      .then(data => {
-        data.forEach(item => {
-          Image.oneJson.push(new Image(item));
-        });
-
-        console.log('array image 1 1 1 1 1 1 1', Image.oneJson);
-
-      });
-    $.ajax(`dashboard-iconsJSON/page-2.json`, ajaxSettings)
-      .then(data => {
-        data.forEach(item => {
-          Image.twoJson.push(new Image(item));
-        });
-        console.log('array image 2222222  2 2', Image.twoJson);
-
-      });
-
-
-
-
-
-
-
-
-
-
-
+ 
 
     $.ajax(`dashboard-iconsJSON/page-${page}.json`, ajaxSettings)
       .then(data => {
@@ -65,7 +37,6 @@ $(document).ready(function(){
           $('#image-container').append(image.render());
         });
         Image.populateFilter();
-        console.log('array image all alalalalalalala', Image.all);
 
       });
   };
@@ -141,7 +112,7 @@ $(document).ready(function(){
 
   $(() => {
     Image.readJson(1);
-    Image.readJson(2);
+   ;
     Image.handleFilter();
     Image.handleImageEvents();
     Image.handleSort();
