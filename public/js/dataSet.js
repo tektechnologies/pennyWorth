@@ -17,15 +17,15 @@ $(document).ready(function(){
 
   Image.readJson = (page) => {
     Image.all = [];
-   
-   
+
+
     // $('main').empty();
 
     const ajaxSettings = {
       method: 'get',
       dataType: 'json'
     };
- 
+
 
     $.ajax(`dashboard-iconsJSON/page-${page}.json`, ajaxSettings)
       .then(data => {
@@ -33,7 +33,9 @@ $(document).ready(function(){
           Image.all.push(new Image(item));
         });
         Image.sortBy(Image.all, 'title');
+        
         Image.all.forEach(image => {
+          console.log(image);
           $('#image-container').append(image.render());
         });
         Image.populateFilter();
