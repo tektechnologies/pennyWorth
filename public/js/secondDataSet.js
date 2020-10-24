@@ -17,27 +17,55 @@ $(document).ready(function(){
 
   Image.readJson = (page) => {
     Image.all = [];
-    console.log('array image all', Image.all);
+    Image.oneJson = [];
+    Image.twoJson = [];
+   
     // $('main').empty();
 
     const ajaxSettings = {
       method: 'get',
       dataType: 'json'
     };
+    $.ajax(`dashboard-iconsJSON/page-1.json`, ajaxSettings)
+      .then(data => {
+        data.forEach(item => {
+          Image.oneJson.push(new Image(item));
+        });
+
+        console.log('array image 1 1 1 1 1 1 1', Image.oneJson);
+
+      });
+    $.ajax(`dashboard-iconsJSON/page-2.json`, ajaxSettings)
+      .then(data => {
+        data.forEach(item => {
+          Image.twoJson.push(new Image(item));
+        });
+        console.log('array image 2222222  2 2', Image.twoJson);
+
+      });
+
+
+
+
+
+
+
+
+
+
+
 
     $.ajax(`dashboard-iconsJSON/page-${page}.json`, ajaxSettings)
       .then(data => {
-
         data.forEach(item => {
           Image.all.push(new Image(item));
         });
-
         Image.sortBy(Image.all, 'title');
-
         Image.all.forEach(image => {
           $('#image-container').append(image.render());
         });
         Image.populateFilter();
+        console.log('array image all alalalalalalala', Image.all);
 
       });
   };
@@ -108,23 +136,14 @@ $(document).ready(function(){
     });
   };
 
-  //   Image.handleNavEvents = () => {
-  //     $('footer ul, header ul').on('click', 'li', function () {
-  //       $('#image-container').empty();
-  //       Image.readJson($(this).attr('id'));
-  //     });
-  // };
+
 
 
   $(() => {
     Image.readJson(1);
+    Image.readJson(2);
     Image.handleFilter();
     Image.handleImageEvents();
-    // Image.handleNavEvents();
     Image.handleSort();
   });
-
-
-
-
 });
