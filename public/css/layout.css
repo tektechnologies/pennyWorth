@@ -12,6 +12,19 @@
     border-radius: 25px;
   }
   
+  .flex-container > section > div {
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    width: 40%;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 15px;
+  }
+
+
   .flex-container > section form {
     background-color: #FFF;
     font-size: 16px;
