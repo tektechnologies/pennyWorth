@@ -12,6 +12,10 @@
     border-radius: 25px;
   }
   
+  .flex-container > section form {
+    background-color: #FFF;
+    font-size: 16px;
+  }
 
   /* task Detail Page  */
   .flex-containerDetail {
@@ -57,23 +61,28 @@
    
 
 
-  .flex-containerDetail > div {
+
+
+  .flex-container > div {
+    display: inline-block;
+    background-color: #FFF;
+    border: 5px solid #1768AC;
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  /* .flex-containerDetail > div {
     background-color: #1768AC;
     border: 5px solid  #06BEE1; 
     padding: 20px;
     font-size: 30px;
     border-radius: 25px;
     margin: 0 auto;
-  }
-  .flex-container > div {
-    background-color: #FFF;
-    border: 5px solid #1768AC;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-    border-radius: 25px;
-  }
-  .flex-containerPortal > div {
+  } */
+ 
+  /* .flex-containerPortal > div {
     background-color: #FFF;
     border: 5px solid #1768AC;
     margin: 10px;
@@ -81,7 +90,7 @@
     font-size: 30px;
     border-radius: 25px;
     width: 33%;
-  }
+  } */
 
  /* ------------------------- */
 
@@ -105,4 +114,59 @@ float: left;
   }
   .crudTaskNav li a{
     color: #FFF;
+    }
+
+
+
+    section.active {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    section.active img {
+      height: 400px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      z-index: 200;
+    }
+    
+    section.active p {
+      background: #f5f5f5;
+      color: #111;
+      display: block !important;
+      left: 0;
+      margin: auto;
+      padding: .5em 0;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: calc(50% + 200px);
+      transform: translateY(-50%);
+      width: 400px;
+      z-index: 200;
+    }
+    
+    section.active h2 {
+      display: none;
+    }
+    
+    section.active:after {
+      background: #000;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      content: '&nbsp;';
+      opacity: .6;
+      position: absolute;
+      z-index: 100;
     }
