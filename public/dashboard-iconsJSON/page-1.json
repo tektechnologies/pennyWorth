@@ -1,139 +1,65 @@
 [
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "Growin-PRO",
-    "description": "Larger Yields, less environmental damage.",
+    "title": "Growin-PRO Level 1:",
+    "description": " GreenClean, less environmental damage.",
     "keyword": "Agriculture",
     "level": 1
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "ADB",
-    "description": "Level 4: Artist, Designer, Builder: Manage your home systems and the home itself, access the work history of your home and forcast home repairs to save time and money.",
-    "keyword": "Residential",
-    "level": 4
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "LASC",
-    "description": "Life Automation System Control: Personal Management tool that monitors and tracks your data, so you dont have too. Get up to the minute reports on health, wealth and well being.",
-    "keyword": "Social",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "sayWhat",
-    "description": "Get the latest updates from all social interactions. Send and Receive messages and keep conversations in their own feeds, find out whats up.",
-    "keyword": "Social",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "toDoList",
-    "description": "Make a to do list and get stuff down, integrate your home to do list with your ADB system",
-    "keyword": "Social",
-    "level": 5
-  }, {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "Growin-PRO",
-    "description": "Larger Yields, less environmental damage.",
+    "title": "Growin-PRO Level 2:",
+    "description": " Food for eating.",
     "keyword": "Agriculture",
-    "level": 1
+    "level": 2
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "ADB",
-    "description": "Level Three:  Artist, Designer, Builder: Manage your home systems and the home itself, access the work history of your home and forcast home repairs to save time and money.",
-    "keyword": "Residential",
+    "title": "Growin-PRO Level 3:",
+    "description": " Land, and Plant production management.",
+    "keyword": "Agriculture",
     "level": 3
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "LASC",
-    "description": "Life Automation System Control: Personal Management tool that monitors and tracks your data, so you dont have too. Get up to the minute reports on health, wealth and well being.",
-    "keyword": "Social",
+    "title": "ADB Level 1:",
+    "description": "Artist, Designer, Builder: Manage your home.",
+    "keyword": "Residential",
     "level": 1
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "sayWhat",
-    "description": "Get the latest updates from all social interactions. Send and Receive messages and keep conversations in their own feeds, find out whats up.",
-    "keyword": "Social",
-    "level": 4
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "toDoList",
-    "description": "Make a to do list and get stuff down, integrate your home to do list with your ADB system",
-    "keyword": "Social",
-    "level": 5
-  }, {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "Growin-PRO",
-    "description": "Larger Yields, less environmental damage.",
-    "keyword": "Agriculture",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "ADB",
-    "description": "Level Two : Artist, Designer, Builder: Manage your home systems and the home itself, access the work history of your home and forcast home repairs to save time and money.",
+    "title": "ADB Level 2 :",
+    "description": "Api to local contractors. Preventative maintenance.",
     "keyword": "Residential",
     "level": 2
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "LASC",
-    "description": "Life Automation System Control: Personal Management tool that monitors and tracks your data, so you dont have too. Get up to the minute reports on health, wealth and well being.",
-    "keyword": "Social",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "sayWhat",
-    "description": "Get the latest updates from all social interactions. Send and Receive messages and keep conversations in their own feeds, find out whats up.",
-    "keyword": "Social",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "toDoList",
-    "description": "Make a to do list and get stuff down, integrate your home to do list with your ADB system",
-    "keyword": "Social",
-    "level": 5
-  }, {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "Growin-PRO",
-    "description": "Larger Yields, less environmental damage.",
-    "keyword": "Agriculture",
-    "level": 1
-  },
-  {
-    "image_url": "https://picsum.photos/140/150",
-    "title": "ADB",
-    "description": "  level 1   : Artist, Designer, Builder: Manage your home systems and the home itself, access the work history of your home and forcast home repairs to save time and money.",
+    "title": "ADB Level 3 :",
+    "description": " Property management and estate planning",
     "keyword": "Residential",
-    "level": 1
+    "level": 3
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "LASC",
-    "description": "Life Automation System Control: Personal Management tool that monitors and tracks your data, so you dont have too. Get up to the minute reports on health, wealth and well being.",
+    "title": "sayWhat Level 1:",
+    "description": "Communitcate, find out whats up.",
     "keyword": "Social",
     "level": 1
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "sayWhat",
-    "description": "Get the latest updates from all social interactions. Send and Receive messages and keep conversations in their own feeds, find out whats up.",
+    "title": "toDoList Level 2:",
+    "description": "Integrate your home to do list with your Residential system",
     "keyword": "Social",
-    "level": 4
+    "level": 2
   },
   {
     "image_url": "https://picsum.photos/140/150",
-    "title": "toDoList",
-    "description": "Make a to do list and get stuff down, integrate your home to do list with your ADB system",
+    "title": "LASC Level 3:",
+    "description": "Life Automation System Control: Personal Management.",
     "keyword": "Social",
-    "level": 5
+    "level": 3
   }
   ]
