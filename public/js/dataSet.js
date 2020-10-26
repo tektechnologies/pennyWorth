@@ -33,7 +33,7 @@ $(document).ready(function(){
           Image.all.push(new Image(item));
         });
         Image.sortBy(Image.all, 'title');
-        
+
         Image.all.forEach(image => {
           console.log(image);
           $('#image-container').append(image.render());
@@ -114,7 +114,6 @@ $(document).ready(function(){
 
   $(() => {
     Image.readJson(1);
-   ;
     Image.handleFilter();
     Image.handleImageEvents();
     Image.handleSort();
