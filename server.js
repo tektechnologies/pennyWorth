@@ -42,8 +42,14 @@ app.get('/', (request, response) => {
   response.render('', viewModel);
 });
 
+app.get('/weather', weatherOne);
 
-
+function weatherOne(request, response) {
+  let viewModel = {
+    user
+  };
+  response.render('pages/weather', viewModel);
+}
 
 //Add route for Task List Page
 // API Routes
@@ -57,6 +63,8 @@ app.get('/addTask', showForm);
 
 app.post('/addNewTask', addTask);
 
+
+
 app.get( '*', (request, response) => response.status(404).send('This request route was not found, you have reached a 404. Bye for now.'));
 
 console.log('Trying to connect to Postgres');
@@ -68,6 +76,11 @@ client.connect()
   .catch(err => { throw err; })
 
 // HELPER FUNCTIONS
+
+
+
+
+
 
 function getTasksHomePage(request, response) {
   const SQL = `
